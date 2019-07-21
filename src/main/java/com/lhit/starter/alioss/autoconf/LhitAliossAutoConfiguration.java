@@ -64,7 +64,7 @@ public class LhitAliossAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public LhitAliossFileMgrService lhitAliossFileMgrService(){
-        return new LhitAliossFileMgrService();
+    public LhitAliossObjMgrService lhitAliossFileMgrService(){
+        return new LhitAliossObjMgrService();
     }
 }

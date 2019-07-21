@@ -3,10 +3,8 @@ package com.lhit.starter.alioss.service;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.GetObjectRequest;
 import com.aliyun.oss.model.OSSObject;
-import com.aliyun.oss.model.PutObjectResult;
 
 import java.io.*;
-import java.net.URL;
 
 public class LhitAliossDownloadService {
 

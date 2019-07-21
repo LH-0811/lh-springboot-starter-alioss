@@ -1,17 +1,11 @@
 package com.lhit.starter.alioss.service;
 
-import com.aliyun.oss.OSS;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.*;
-
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LhitAliossFileMgrService {
+public class LhitAliossObjMgrService {
 
 
     /**
