@@ -42,7 +42,7 @@ public class LhitAliossUploadService {
 
 
     /**
-     * 删除网络流数据
+     * 上传网络流数据
      *
      * @param ossClient
      * @param bucketName
