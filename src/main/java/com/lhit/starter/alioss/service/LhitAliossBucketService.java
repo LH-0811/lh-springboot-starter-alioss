@@ -3,6 +3,7 @@ package com.lhit.starter.alioss.service;
 import com.aliyun.oss.OSSClient;
 import com.aliyun.oss.model.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LhitAliossBucketService {
@@ -44,10 +45,20 @@ public class LhitAliossBucketService {
      * @param ossClient
      * @return
      */
-    public List<Bucket> queryBucketList(OSSClient ossClient) throws Exception {
+    public List<BucketList> queryAllBucket(OSSClient ossClient,Integer maxKeys) throws Exception {
+        List<BucketList> bucketLists = new ArrayList<BucketList>();
         // 列举存储空间。
-        List<Bucket> buckets = ossClient.listBuckets();
-        return buckets;
+        String nextMarket = null;
+        BucketList bucketList;
+        do {
+            ListBucketsRequest listBucketsRequest = new ListBucketsRequest().withMarker(nextMarket);
+            if (maxKeys != null){
+                listBucketsRequest.withMaxKeys(maxKeys);
+            }
+            bucketList = ossClient.listBuckets(listBucketsRequest);
+            bucketLists.add(bucketList);
+        }while (bucketList.isTruncated());
+        return bucketLists;
     }
 
 
