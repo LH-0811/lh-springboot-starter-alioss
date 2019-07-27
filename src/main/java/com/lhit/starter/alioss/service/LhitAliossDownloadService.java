@@ -6,6 +6,10 @@ import com.aliyun.oss.model.OSSObject;
 
 import java.io.*;
 
+
+/**
+ * 对象下载管理 服务
+ */
 public class LhitAliossDownloadService {
 
 

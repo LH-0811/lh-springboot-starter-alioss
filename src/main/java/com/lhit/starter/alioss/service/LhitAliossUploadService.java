@@ -8,6 +8,9 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 
+/**
+ * 对象上传服务
+ */
 public class LhitAliossUploadService {
 
 

@@ -5,6 +5,9 @@ import com.aliyun.oss.model.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 对象管理 服务
+ */
 public class LhitAliossObjMgrService {
 
 

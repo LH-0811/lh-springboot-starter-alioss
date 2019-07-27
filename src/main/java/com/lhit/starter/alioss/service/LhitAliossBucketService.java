@@ -6,6 +6,9 @@ import com.aliyun.oss.model.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 存储空间管理 服务
+ */
 public class LhitAliossBucketService {
 
     /**
