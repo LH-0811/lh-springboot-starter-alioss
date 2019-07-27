@@ -6,20 +6,72 @@ import com.lhit.starter.alioss.imagedeal.enum_.AliossImageResizeModel;
 public class AliossImageResizeRule implements AliossImageRule {
 
 
+    /**
+     * 指定缩略的模式：
+     * lfit：等比缩放，限制在指定w与h的矩形内的最大图片。
+     * mfit：等比缩放，延伸出指定w与h的矩形框外的最小图片。
+     * fill：固定宽高，将延伸出指定w与h的矩形框外的最小图片进行居中裁剪。
+     * pad：固定宽高，缩略填充。
+     * fixed：固定宽高，强制缩略。
+     *
+     * 取值：
+     * lfit、mfit、fill、pad、fixed，默认为 lfit。
+     */
     private AliossImageResizeModel m;
 
+    /**
+     * 	指定目标缩略图的宽度。
+     *
+     * 	取值范围
+     * 	1-4096
+     */
     private Integer w;
 
+    /**
+     * 指定目标缩略图的高度。
+     *
+     * 取值范围
+     * 1-4096
+     */
     private Integer h;
 
+    /**
+     * 指定目标缩略图的最长边。
+     *
+     * 取值范围
+     * 1-4096
+     */
     private Integer l;
 
+    /**
+     * 指定目标缩略图的最短边。
+     *
+     * 取值范围
+     * 1-4096
+     */
     private Integer s;
 
+
+    /**
+     * 倍数百分比。 小于 100，即是缩小，大于 100 即是放大。
+     *
+     * 1-1000
+     */
     private Integer p;
 
+    /**
+     * 指定当目标缩略图大于原图时是否处理。值是 1 表示不处理；值是 0 表示处理。
+     *
+     * 0/1, 默认是 1
+     */
     private Boolean limit;
 
+
+    /**
+     * 当缩放模式选择为 pad（缩略填充）时，可以选择填充的颜色(默认是白色)参数的填写方式：采用 16 进制颜色码表示，如 00FF00（绿色）。
+     *
+     * [000000-FFFFFF]
+     */
     private String color;
 
 

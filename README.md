@@ -94,6 +94,29 @@ META-INF/spring.factories (指定springboot扫描的自动装配类)
 ###### 5.上传文件流
 
 <br/>
+
+### LhitAliossImgMgrService 图片处理功能
+
+###### 1.获取图片主色调
+###### 2.获取图片的缩略图
+###### 3.持久化修改图片 （其实是在原图片的基础上 修改后保存为新图片）
+<br>
+eg: 以下是图片修改的示例
+```
+    
+    // 指定要对图片做哪些处理
+    List<AliossImageRule> lists = new ArrayList<>();
+    lists.add(new AliossImageResizeRule().withP(50).withW(100).withH(100));
+    lists.add(new AliossImageQualityRule().withq(100).withQ(100));
+    String s2 = lhitAliossImageService.imageThumbnail(bucketName, "test_file/test.png", lists);
+    String s1 = lhitAliossImageService.imagePersistentUpdate(clientService.getOssClient(), bucketName, "test_file/test.png", "test_file/test2.png", lists);
+    System.out.println(s1);
+    System.out.println(s2);
+
+```
+
+
+
 # 关于使用<br/>
 
 ###### clone下源码 mvn install 到自己的mvn仓库，然后在springboot项目中引用。
