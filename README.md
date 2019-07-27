@@ -105,10 +105,17 @@ eg: 以下是图片修改的示例
 ```
     
     // 指定要对图片做哪些处理
+    // 详细参数 请看源码注解 imagedeal.rule 包下为图片修改的规则
     List<AliossImageRule> lists = new ArrayList<>();
     lists.add(new AliossImageResizeRule().withP(50).withW(100).withH(100));
     lists.add(new AliossImageQualityRule().withq(100).withQ(100));
+    
+    // 获取图片缩略图地址
     String s2 = lhitAliossImageService.imageThumbnail(bucketName, "test_file/test.png", lists);
+    
+    // 持久化修改图片 返回值为持久化后的新图片的地址
+    // targetImage 修改完成后 存储到oss中的 图片对象名称（新图）
+    // sourceImage 已经存储在oss中的图片
     String s1 = lhitAliossImageService.imagePersistentUpdate(clientService.getOssClient(), bucketName, "test_file/test.png", "test_file/test2.png", lists);
     System.out.println(s1);
     System.out.println(s2);
