@@ -100,10 +100,10 @@ META-INF/spring.factories (指定springboot扫描的自动装配类)
 ###### 1.获取图片主色调
 ###### 2.获取图片的缩略图
 ###### 3.持久化修改图片 （其实是在原图片的基础上 修改后保存为新图片）
-<br>
+<br/>
 eg: 以下是图片修改的示例
-```
-    
+<hr/>
+
     // 指定要对图片做哪些处理
     // 详细参数 请看源码注解 imagedeal.rule 包下为图片修改的规则
     List<AliossImageRule> lists = new ArrayList<>();
@@ -119,30 +119,15 @@ eg: 以下是图片修改的示例
     String s1 = lhitAliossImageService.imagePersistentUpdate(clientService.getOssClient(), bucketName, "test_file/test.png", "test_file/test2.png", lists);
     System.out.println(s1);
     System.out.println(s2);
-
-```
-
-
-
-# 关于使用<br/>
-
-###### clone下源码 mvn install 到自己的mvn仓库，然后在springboot项目中引用。
+    
+<hr/>
 
 
 
+# 关于使用
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+clone下源码 mvn install 到自己的mvn仓库，然后在springboot项目中引用。<br/>
+需要配置的属性:<br/>
+lhit.aliyun.oss.keyId="your keyId"<br/>
+lhit.aliyun.oss.keySecret="your key secret"<br>
+#lhit.aliyun.oss.endpoint=oss-cn-hangzhou.aliyuncs.com
